@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.6.10 on darwin)" generated="20200311 00:26:06.955" rpa="false">
+<suite id="s1" name="Atest" source="/Users/propaganda/Documents/Works/learn/robot-framework/robot-framework-rest-api-demo/atest">
+<suite id="s1-s1" name="Rest" source="/Users/propaganda/Documents/Works/learn/robot-framework/robot-framework-rest-api-demo/atest/rest.robot">
+<test id="s1-s1-t1" name="Get User Profile Success">
+<kw name="Get_User_Profile">
+<arguments>
+<arg>id=12</arg>
+</arguments>
+<kw name="Get" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<arguments>
+<arg>/users/${id}</arg>
+</arguments>
+<status status="PASS" starttime="20200311 00:26:07.452" endtime="20200311 00:26:07.568"></status>
+</kw>
+<status status="PASS" starttime="20200311 00:26:07.451" endtime="20200311 00:26:07.568"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response status</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20200311 00:26:07.568" endtime="20200311 00:26:07.569"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>$.data.id</arg>
+<arg>12</arg>
+</arguments>
+<status status="PASS" starttime="20200311 00:26:07.570" endtime="20200311 00:26:07.598"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>$.data.email</arg>
+<arg>rachel.howell@reqres.in</arg>
+</arguments>
+<status status="PASS" starttime="20200311 00:26:07.599" endtime="20200311 00:26:07.622"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>$.data.first_name</arg>
+<arg>Rachel</arg>
+</arguments>
+<status status="PASS" starttime="20200311 00:26:07.622" endtime="20200311 00:26:07.643"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>$.data.last_name</arg>
+<arg>Howell</arg>
+</arguments>
+<status status="PASS" starttime="20200311 00:26:07.644" endtime="20200311 00:26:07.672"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>$.data.avatar</arg>
+<arg>https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg</arg>
+</arguments>
+<status status="PASS" starttime="20200311 00:26:07.672" endtime="20200311 00:26:07.693"></status>
+</kw>
+<status status="PASS" starttime="20200311 00:26:07.451" endtime="20200311 00:26:07.693" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="Get User Profile But User Not Found">
+<kw name="Get_User_Profile">
+<arguments>
+<arg>id=123</arg>
+</arguments>
+<kw name="Get" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<arguments>
+<arg>/users/${id}</arg>
+</arguments>
+<status status="PASS" starttime="20200311 00:26:07.695" endtime="20200311 00:26:07.745"></status>
+</kw>
+<status status="PASS" starttime="20200311 00:26:07.694" endtime="20200311 00:26:07.746"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response status</arg>
+<arg>404</arg>
+</arguments>
+<status status="PASS" starttime="20200311 00:26:07.746" endtime="20200311 00:26:07.747"></status>
+</kw>
+<kw name="Object" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON object.*</doc>
+<arguments>
+<arg>response body</arg>
+<arg>{}</arg>
+</arguments>
+<status status="PASS" starttime="20200311 00:26:07.747" endtime="20200311 00:26:07.748"></status>
+</kw>
+<status status="PASS" starttime="20200311 00:26:07.694" endtime="20200311 00:26:07.748" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200311 00:26:06.985" endtime="20200311 00:26:07.748"></status>
+</suite>
+<status status="PASS" starttime="20200311 00:26:06.957" endtime="20200311 00:26:07.749"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="Atest">Atest</stat>
+<stat pass="2" fail="0" id="s1-s1" name="Rest">Atest.Rest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
