@@ -14,7 +14,7 @@ jsonpath-ng==1.5.1
 jsonpointer==2.0
 jsonschema==3.2.0
 ply==3.11
-Pygments==2.6.1
+Pygments==2.7.4
 pyrsistent==0.15.7
 pytz==2019.3
 PyYAML==5.3
